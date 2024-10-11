@@ -91,3 +91,58 @@ body {
     display: block;
   }
   
+  /* --- Responsive Styling --- */
+  
+  /* Tablet devices (screens wider than 768px but less than 1024px) */
+  @media (max-width: 1024px) {
+    .size {
+      font-size: 180px; /* Reduce font size for tablets */
+    }
+  
+    .loader-text, .loader-text-reversed {
+      font-size: 180px; /* Match the size adjustment */
+    }
+  
+    #content h1 {
+      font-size: 24px; /* Adjust main content heading for tablet screens */
+    }
+  }
+  
+  /* Mobile devices (screens narrower than 768px) */
+  @media (max-width: 768px) {
+    .size {
+      font-size: 120px; /* Reduce font size for mobile devices */
+    }
+  
+    .loader-text, .loader-text-reversed {
+      font-size: 120px; /* Adjust font size for mobile */
+    }
+  
+    .loader-text {
+      bottom: 40%; /* Adjust position for mobile */
+    }
+  
+    .loader-text-reversed {
+      top: 40%; /* Adjust position for mobile */
+    }
+  
+    #content h1 {
+      font-size: 20px; /* Adjust main content heading for mobile screens */
+    }
+  }
+  
+  /* Extra small devices (phones in portrait mode or very small screens) */
+  @media (max-width: 480px) {
+    .size {
+      font-size: 80px; /* Further reduce font size for very small screens */
+    }
+  
+    .loader-text, .loader-text-reversed {
+      font-size: 80px; /* Match the size adjustment */
+    }
+  
+    #content h1 {
+      font-size: 18px; /* Further adjust main content heading */
+    }
+  }
+  
