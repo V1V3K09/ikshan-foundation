@@ -1,4 +1,4 @@
-/* Set height and margin of body to ensure background covers entire viewport */
+/* General body styles */
 body {
     height: 100vh;
     margin: 0;
@@ -11,6 +11,7 @@ body {
     background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
     background-size: 600% 600%;
     animation: gradientAnimation 10s ease infinite;
+    overflow: hidden;
   }
   
   /* Gradient animation */
@@ -18,5 +19,75 @@ body {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+  }
+  
+  /* Loader styles */
+  #loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: slideOut 1s ease 4s forwards; /* Delayed to occur after text animation */
+  }
+  
+  .loader-text {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    color: #fff;
+    animation: textPulse 2s ease-in-out infinite, textSlideOut 3s ease 3s forwards; /* Pulsate and slide */
+  }
+  
+  .loader-text-reversed {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    color: #fff;
+    animation: textPulse 2s ease-in-out infinite, textSlideIn 3s ease 3s forwards; /* Pulsate and slide */
+  }
+  
+  .size {
+    font-size: 250px;
+  }
+  
+  /* Slide loader container up and away */
+  @keyframes slideOut {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+  }
+  
+  /* Text slide-out animation (diagonal slide to the right) */
+  @keyframes textSlideOut {
+    0% { transform: translate(0); }
+    100% { transform: translateX(1000%); }
+  }
+  
+  /* Text slide-in animation (diagonal slide to the left) */
+  @keyframes textSlideIn {
+    0% { transform: translate(0); }
+    100% { transform: translateX(-1000%); }
+  }
+  
+  /* Pulsating animation */
+  @keyframes textPulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+  }
+  
+  /* Hide the content initially */
+  .hidden {
+    display: none;
+  }
+  
+  /* Once loader is done, show the content */
+  .visible {
+    display: block;
   }
   
