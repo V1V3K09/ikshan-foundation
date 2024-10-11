@@ -1,0 +1,22 @@
+/* Set height and margin of body to ensure background covers entire viewport */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
+    background-size: 600% 600%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  /* Gradient animation */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
