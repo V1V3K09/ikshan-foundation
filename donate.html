@@ -123,7 +123,7 @@
             feedback: Array.from(document.querySelectorAll('input[name="feedback"]:checked')).map(cb => cb.value).join(', ')
         };
 
-        fetch('https://ikshan-foundation-production.up.railway.app', {
+        fetch('https://ikshan-foundation-production.up.railway.app/api/donate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)

@@ -6,7 +6,12 @@ require('dotenv').config();
 const Donation = require('./models/donation');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ['https://ikshanfoundation.com', 'https://ikshan-foundation.vercel.app'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: false
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
