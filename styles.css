@@ -358,18 +358,6 @@ footer {
   position: relative;
   z-index: 2;
 }
-.donate-btn.prominent {
-  animation: pulse-glow 1.5s infinite alternate;
-  box-shadow: 0 0 16px 4px #ff9800, 0 4px 24px rgba(255,152,0,0.18);
-}
-@keyframes pulse-glow {
-  from {
-    box-shadow: 0 0 16px 4px #ff9800, 0 4px 24px rgba(255,152,0,0.18);
-  }
-  to {
-    box-shadow: 0 0 32px 12px #ff9800, 0 4px 32px rgba(255,152,0,0.28);
-  }
-}
 .donate-btn:hover, .donate-btn:focus {
   background: linear-gradient(90deg, #ff5722 0%, #ff9800 100%);
   transform: scale(1.07);
