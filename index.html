@@ -1,25 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website with Loader</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ikshn - For a Greener Tomorrow</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader">
-    <div class="size">
-        <div class="loader-text">Ikshan</div>
-         <div class="loader-text-reversed"> Infra</div> 
+  <header>
+    <div class="logo">Ikshn</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="donate.html" class="donate-btn">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Join Our Tribe for a Greener Future</h1>
+      <p>Volunteer with us and build an active planet-conscious community.</p>
+      <a href="#" class="cta-button">Get Involved</a>
     </div>
-  </div>
+  </section>
 
-  <!-- Main Content -->
-  <div id="content" class="hidden">
-    <h1>Welcome to my website!</h1>
-  </div>
+  <section class="campaigns">
+    <h2>Our Campaigns</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="tree.jpg" alt="Tree Plantation" />
+        <h3>Tree Plantation Drive</h3>
+        <p>Restoring green cover one tree at a time.</p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="card">
+        <img src="ev.jpg" alt="Charging Station" />
+        <h3>EV Charging Stations</h3>
+        <p>Sustainable travel with our charging network.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="card">
+        <img src="ev.jpg" alt="Feeding Lives" />
+        <h3>Feeding Lives</h3>
+        <p>feeding lives to livestock.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="card">
+        <img src="ev.jpg" alt="Educate the Nation" />
+        <h3>Educate the Nation</h3>
+        <p>Educating the nation about weed.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </section>
 
+  <section class="event">
+    <h2>Bhandara for Donations</h2>
+    <p>Join us in feeding hundreds and raising funds for green initiatives.</p>
+    <a href="#" class="cta-button">Contribute</a>
+  </section>
+
+  <section class="values">
+    <h2>Our Values</h2>
+    <div class="icons">
+      <div>
+        <img src="energy.png" alt="Energy" />
+        <h3>Renewable Energy</h3>
+      </div>
+      <div>
+        <img src="community.png" alt="Community" />
+        <h3>Community First</h3>
+      </div>
+      <div>
+        <img src="activism.png" alt="Activism" />
+        <h3>Environmental Activism</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ikshn Foundation. All rights reserved.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

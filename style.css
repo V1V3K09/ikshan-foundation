@@ -1,148 +1,124 @@
-/* General body styles */
+/* General Styles */
 body {
-    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    background: #f9fdf9;
+    color: #234f1e;
+}
+
+header {
+    background: #234f1e;
     color: white;
-    text-align: center;
-    background: linear-gradient(270deg, #ff7e5f, #feb47b, #ff7e5f);
-    background-size: 600% 600%;
-    animation: gradientAnimation 10s ease infinite;
-    overflow: hidden;
-  }
-  
-  /* Gradient animation */
-  @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  /* Loader styles */
-  #loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    z-index: 1000;
-    animation: slideOut 1s ease 4s forwards; /* Delayed to occur after text animation */
-  }
-  
-  .loader-text {
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-    color: #fff;
-    animation: textPulse 2s ease-in-out infinite, textSlideOut 3s ease 3s forwards; /* Pulsate and slide */
-  }
-  
-  .loader-text-reversed {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    color: #fff;
-    animation: textPulse 2s ease-in-out infinite, textSlideIn 3s ease 3s forwards; /* Pulsate and slide */
-  }
-  
-  .size {
-    font-size: 250px;
-  }
-  
-  /* Slide loader container up and away */
-  @keyframes slideOut {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100%); }
-  }
-  
-  /* Text slide-out animation (diagonal slide to the right) */
-  @keyframes textSlideOut {
-    0% { transform: translate(0); }
-    100% { transform: translateX(1000%); }
-  }
-  
-  /* Text slide-in animation (diagonal slide to the left) */
-  @keyframes textSlideIn {
-    0% { transform: translate(0); }
-    100% { transform: translateX(-1000%); }
-  }
-  
-  /* Pulsating animation */
-  @keyframes textPulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-  }
-  
-  /* Hide the content initially */
-  .hidden {
-    display: none;
-  }
-  
-  /* Once loader is done, show the content */
-  .visible {
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+main {
+    padding: 2rem;
+    background: #eaf3ea;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #cde6c1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background: #f7f8f7;
+}
+
+legend {
+    font-weight: bold;
+    color: #234f1e;
+}
+
+label {
     display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+form label {
+    display: inline-block;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
   }
-  
-  /* --- Responsive Styling --- */
-  
-  /* Tablet devices (screens wider than 768px but less than 1024px) */
-  @media (max-width: 1024px) {
-    .size {
-      font-size: 180px; /* Reduce font size for tablets */
-    }
-  
-    .loader-text, .loader-text-reversed {
-      font-size: 180px; /* Match the size adjustment */
-    }
-  
-    #content h1 {
-      font-size: 24px; /* Adjust main content heading for tablet screens */
-    }
-  }
-  
-  /* Mobile devices (screens narrower than 768px) */
-  @media (max-width: 768px) {
-    .size {
-      font-size: 120px; /* Reduce font size for mobile devices */
-    }
-  
-    .loader-text, .loader-text-reversed {
-      font-size: 120px; /* Adjust font size for mobile */
-    }
-  
-    .loader-text {
-      bottom: 40%; /* Adjust position for mobile */
-    }
-  
-    .loader-text-reversed {
-      top: 40%; /* Adjust position for mobile */
-    }
-  
-    #content h1 {
-      font-size: 20px; /* Adjust main content heading for mobile screens */
-    }
-  }
-  
-  /* Extra small devices (phones in portrait mode or very small screens) */
-  @media (max-width: 480px) {
-    .size {
-      font-size: 80px; /* Further reduce font size for very small screens */
-    }
-  
-    .loader-text, .loader-text-reversed {
-      font-size: 80px; /* Match the size adjustment */
-    }
-  
-    #content h1 {
-      font-size: 18px; /* Further adjust main content heading */
-    }
-  }
+
+input, select {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #cde6c1;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+button.cta-button {
+    display: block;
+    background: #e2721d;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button.cta-button:hover {
+    background: #d3611d;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #234f1e;
+    color: white;
+    font-size: 1rem;
+}
+
   

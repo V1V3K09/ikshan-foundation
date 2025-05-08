@@ -1,0 +1,257 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #234f1e;
+  padding: 1.5rem 2rem;
+  color: white;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #e2721d;
+}
+
+/* Hero Section */
+.hero {
+  background: url('forest.jpg') no-repeat center center/cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  border-radius: 10px;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #e2721d;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #234f1e;
+}
+
+/* Campaigns Section */
+.campaigns {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #dff0d8;
+}
+
+.campaigns h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+.card p {
+  margin: 1rem 0;
+}
+
+.card a {
+  color: #234f1e;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Section */
+.event {
+  background-color: #234f1e;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.event h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.event p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.event .cta-button {
+  background-color: #e2721d;
+}
+
+/* Values Section */
+.values {
+  padding: 4rem 2rem;
+  background-color: #f9fdf9;
+  text-align: center;
+}
+
+.values h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.icons div {
+  text-align: center;
+}
+
+.icons img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.icons h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: #234f1e;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .values .icons {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.contact {
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 2rem;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#contact-form .cta-button {
+    margin-top: 1rem;
+}

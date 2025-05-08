@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donation Form - Ikshn Foundation</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Ikshn</a>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <h2>Make a Difference - Donate Now</h2>
+    <p>Your contribution helps build a greener and more sustainable future for all. Thank you for your support.</p>
+    <form id="donation-form">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="donor-name">Donor's Name:</label>
+        <input type="text" id="donor-name" name="donor" required />
+
+        <label for="pan">PAN Number:</label>
+        <input type="text" id="pan" name="pan" />
+
+        <label for="aadhaar">Aadhaar Number:</label>
+        <input type="text" id="aadhaar" name="aadhaar" />
+
+        <label for="employer">Employer Name:</label>
+        <input type="text" id="employer" name="employer" />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" />
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" />
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" />
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" />
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" />
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Prefer Not to Say</option>
+        </select>
+
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" />
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Support Us For:</legend>
+        <label><input type="checkbox" name="support" value="Green Environment" /> Green Environment</label>
+        <label><input type="checkbox" name="support" value="Feeding Lives" /> Feeding Lives</label>
+        <label><input type="checkbox" name="support" value="Educate the Nation" /> Educate the Nation</label>
+        <label><input type="checkbox" name="support" value="Other" /> Support Other Initiatives: <input type="text" id="other-initiative"/></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Donation Amount</legend>
+        <label for="donation-amount">Enter Donation Amount (₹):</label>
+        <input type="number" id="donation-amount" name="donation" min="500" required />
+        <small>Minimum donation amount is ₹500</small>
+      </fieldset>
+
+      <fieldset>
+        <legend>Feedback</legend>
+        <label><input type="checkbox" name="feedback" value="ID card" /> Representative wore an ID card</label>
+        <label><input type="checkbox" name="feedback" value="Respectful" /> Representative was respectful</label>
+        <label><input type="checkbox" name="feedback" value="Clear explanation" /> Explained goals clearly</label>
+      </fieldset>
+
+      <button type="submit" class="cta-button">Submit Donation</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Contact Us: IKSHN INFRA | Tel: --- | Email: --- | Website: ---</p>
+  </footer>
+
+  <script>
+    // Initialize EmailJS
+    emailjs.init("SUjp-9XPIHAKKit1v");
+
+    // Get the form element
+    const form = document.getElementById('donation-form');
+
+    // Add submit event listener to the form
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get all form data
+        const formData = {
+            donor_name: document.getElementById('donor-name').value,
+            pan: document.getElementById('pan').value,
+            aadhaar: document.getElementById('aadhaar').value,
+            employer: document.getElementById('employer').value,
+            dob: document.getElementById('dob').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            state: document.getElementById('state').value,
+            pincode: document.getElementById('pincode').value,
+            gender: document.getElementById('gender').value,
+            mobile: document.getElementById('mobile').value,
+            email: document.getElementById('email').value,
+            donation_amount: document.getElementById('donation-amount').value,
+            support_causes: Array.from(document.querySelectorAll('input[name="support"]:checked')).map(cb => cb.value).join(', '),
+            other_initiative: document.getElementById('other-initiative').value,
+            feedback: Array.from(document.querySelectorAll('input[name="feedback"]:checked')).map(cb => cb.value).join(', ')
+        };
+
+        // Send email using EmailJS
+        emailjs.send("service_flsr2uc", "template_uaxce9o", formData)
+        .then(function(response) {
+            console.log("SUCCESS", response);
+            alert("Thank you for your donation! We will contact you shortly.");
+            form.reset();
+        })
+        .catch(function(error) {
+            console.log("FAILED", error);
+            alert("Failed to submit donation. Please try again.");
+        });
+    });
+  </script>
+</body>
+</html>
