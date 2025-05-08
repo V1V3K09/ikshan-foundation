@@ -3,140 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donation Form - Ikshn Foundation</title>
+  <title>Donate - Ikshan Infra</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #234f1e;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .qr-section {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 2rem 2rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      width: 100%;
+    }
+    .qr-section img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .disclaimer {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #555;
+      background: #f9f9e7;
+      border-left: 4px solid #e2721d;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 500px;
+    }
+    @media (max-width: 600px) {
+      .qr-section { padding: 1rem; }
+      .logo { font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <a href="index.html" class="logo">Ikshn</a>
-    <nav>
-      <a href="index.html">Home</a>
-    </nav>
-  </header>
-
-  <main class="form-container">
-    <h2>Make a Difference - Donate Now</h2>
-    <p>Your contribution helps build a greener and more sustainable future for all. Thank you for your support.</p>
-    <form id="donation-form">
-      <fieldset>
-        <legend>Personal Information</legend>
-        <label for="donor-name">Donor's Name:</label>
-        <input type="text" id="donor-name" name="donor" required />
-
-        <label for="pan">PAN Number:</label>
-        <input type="text" id="pan" name="pan" />
-
-        <label for="aadhaar">Aadhaar Number:</label>
-        <input type="text" id="aadhaar" name="aadhaar" />
-
-        <label for="employer">Employer Name:</label>
-        <input type="text" id="employer" name="employer" />
-
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" />
-
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" />
-
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" />
-
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" />
-
-        <label for="pincode">Pincode:</label>
-        <input type="text" id="pincode" name="pincode" />
-
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender">
-          <option>Male</option>
-          <option>Female</option>
-          <option>Prefer Not to Say</option>
-        </select>
-
-        <label for="mobile">Mobile:</label>
-        <input type="tel" id="mobile" name="mobile" />
-
-        <label for="email">Email ID:</label>
-        <input type="email" id="email" name="email" required />
-      </fieldset>
-
-      <fieldset>
-        <legend>Support Us For:</legend>
-        <label><input type="checkbox" name="support" value="Green Environment" /> Green Environment</label>
-        <label><input type="checkbox" name="support" value="Feeding Lives" /> Feeding Lives</label>
-        <label><input type="checkbox" name="support" value="Educate the Nation" /> Educate the Nation</label>
-        <label><input type="checkbox" name="support" value="Other" id="other-checkbox" /> Other</label>
-        <label for="other-initiative" id="other-initiative-label" style="display:none;">Support Other Initiatives:</label>
-        <input type="text" id="other-initiative" name="other_initiative" style="display:none;" disabled />
-      </fieldset>
-
-      <fieldset>
-        <legend>Donation Amount</legend>
-        <label for="donation-amount">Enter Donation Amount (₹):</label>
-        <input type="number" id="donation-amount" name="donation" min="500" required />
-        <small>Minimum donation amount is ₹500</small>
-      </fieldset>
-
-      <fieldset>
-        <legend>Feedback</legend>
-        <label><input type="checkbox" name="feedback" value="ID card" /> Representative wore an ID card</label>
-        <label><input type="checkbox" name="feedback" value="Respectful" /> Representative was respectful</label>
-        <label><input type="checkbox" name="feedback" value="Clear explanation" /> Explained goals clearly</label>
-      </fieldset>
-
-      <button type="submit" class="cta-button">Submit Donation</button>
-    </form>
-  </main>
-
-  <footer>
-    <p>Contact Us: IKSHN INFRA | Tel: --- | Email: --- | Website: ---</p>
-  </footer>
-
-  <script>
-    const form = document.getElementById('donation-form');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const donationAmount = parseInt(document.getElementById('donation-amount').value, 10);
-        if (isNaN(donationAmount) || donationAmount < 500) {
-            alert('Minimum donation amount is ₹500.');
-            return;
-        }
-
-        const formData = {
-            donor_name: document.getElementById('donor-name').value,
-            pan: document.getElementById('pan').value,
-            aadhaar: document.getElementById('aadhaar').value,
-            employer: document.getElementById('employer').value,
-            dob: document.getElementById('dob').value,
-            address: document.getElementById('address').value,
-            city: document.getElementById('city').value,
-            state: document.getElementById('state').value,
-            pincode: document.getElementById('pincode').value,
-            gender: document.getElementById('gender').value,
-            mobile: document.getElementById('mobile').value,
-            email: document.getElementById('email').value,
-            donation_amount: donationAmount,
-            support_causes: Array.from(document.querySelectorAll('input[name="support"]:checked')).map(cb => cb.value).join(', '),
-            other_initiative: document.getElementById('other-initiative').value,
-            feedback: Array.from(document.querySelectorAll('input[name="feedback"]:checked')).map(cb => cb.value).join(', ')
-        };
-
-        fetch('https://ikshan-foundation-production.up.railway.app', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        })
-        .then(res => res.json())
-        .then(data => {
-            alert('Thank you for your donation!');
-            form.reset();
-        })
-        .catch(err => {
-            alert('Failed to submit donation. Please try again.');
-        });
-    });
-  </script>
+  <div class="logo">Ikshan Infra</div>
+  <div class="qr-section">
+    <img src="paytm-upi-qr.jpg" alt="Ikshan Infra Paytm UPI QR" />
+    <div style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem;">Ikshan Infra</div>
+    <div style="font-size: 1.1rem; margin-bottom: 0.5rem;">Paytm UPI: <b>9212346651@ptsbi</b></div>
+  </div>
+  <div class="disclaimer">
+    The fundraising campaign is being conducted by Ikshan Infra on behalf of the IKSHN Foundation. The IKSHN Foundation (Intelligent Kinetics for Sustainable Human and Nature Foundation), registered under CIN U80902UP2019NPL121537, is operated by Ikshan Infra to manage fundraising and campaign activities. All donations will go to the IKSHN Foundation, which will also issue the 80G certificates against every donation.
+  </div>
 </body>
 </html>
