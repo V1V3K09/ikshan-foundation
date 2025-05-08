@@ -19,6 +19,7 @@ header {
   background-color: #234f1e;
   padding: 1.5rem 2rem;
   color: white;
+  margin-bottom: 1.5rem;
 }
 
 .logo {
@@ -338,4 +339,39 @@ footer {
 }
 .hamburger.open span:nth-child(3) {
   transform: translateY(-0.55rem) rotate(-45deg);
+}
+
+.donate-btn {
+  background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%);
+  color: #fff;
+  padding: 0.9rem 2.2rem;
+  border-radius: 40px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(255,152,0,0.18);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  border: none;
+  outline: none;
+  margin-left: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.donate-btn.prominent {
+  animation: pulse-glow 1.5s infinite alternate;
+  box-shadow: 0 0 16px 4px #ff9800, 0 4px 24px rgba(255,152,0,0.18);
+}
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 16px 4px #ff9800, 0 4px 24px rgba(255,152,0,0.18);
+  }
+  to {
+    box-shadow: 0 0 32px 12px #ff9800, 0 4px 32px rgba(255,152,0,0.28);
+  }
+}
+.donate-btn:hover, .donate-btn:focus {
+  background: linear-gradient(90deg, #ff5722 0%, #ff9800 100%);
+  transform: scale(1.07);
+  box-shadow: 0 0 32px 12px #ff9800, 0 4px 32px rgba(255,152,0,0.28);
 }
