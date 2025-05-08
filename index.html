@@ -10,8 +10,11 @@
 <body>
   <header>
     <div class="logo">Ikshn</div>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <nav>
-      <ul>
+      <ul id="mobile-nav">
         <li><a href="#">Home</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Events</a></li>
@@ -104,5 +107,14 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', function() {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      this.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+  </script>
 </body>
 </html>
