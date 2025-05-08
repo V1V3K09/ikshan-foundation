@@ -6,7 +6,9 @@ require('dotenv').config();
 const Donation = require('./models/donation');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://your-frontend.vercel.app' // replace with your actual Vercel URL
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
