@@ -7,7 +7,7 @@ const Donation = require('./models/donation');
 
 const app = express();
 app.use(cors({
-  origin: 'https://your-frontend.vercel.app' // replace with your actual Vercel URL
+  origin: 'https://ikshanfoundation.com' 
 }));
 app.use(express.json());
 
