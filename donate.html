@@ -67,9 +67,9 @@
         <label><input type="checkbox" name="support" value="Green Environment" /> Green Environment</label>
         <label><input type="checkbox" name="support" value="Feeding Lives" /> Feeding Lives</label>
         <label><input type="checkbox" name="support" value="Educate the Nation" /> Educate the Nation</label>
-        <label><input type="checkbox" name="support" value="Other" /> Other</label>
-        <label for="other-initiative">Support Other Initiatives:</label>
-        <input type="text" id="other-initiative" name="other_initiative" />
+        <label><input type="checkbox" name="support" value="Other" id="other-checkbox" /> Other</label>
+        <label for="other-initiative" id="other-initiative-label" style="display:none;">Support Other Initiatives:</label>
+        <input type="text" id="other-initiative" name="other_initiative" style="display:none;" disabled />
       </fieldset>
 
       <fieldset>
@@ -97,6 +97,23 @@
   <script>
     // Initialize EmailJS
     emailjs.init("SUjp-9XPIHAKKit1v");
+
+    // Show/hide and enable/disable 'other initiative' field
+    const otherCheckbox = document.getElementById('other-checkbox');
+    const otherInitiativeInput = document.getElementById('other-initiative');
+    const otherInitiativeLabel = document.getElementById('other-initiative-label');
+    otherCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        otherInitiativeInput.style.display = 'block';
+        otherInitiativeLabel.style.display = 'block';
+        otherInitiativeInput.disabled = false;
+      } else {
+        otherInitiativeInput.style.display = 'none';
+        otherInitiativeLabel.style.display = 'none';
+        otherInitiativeInput.disabled = true;
+        otherInitiativeInput.value = '';
+      }
+    });
 
     // Get the form element
     const form = document.getElementById('donation-form');
